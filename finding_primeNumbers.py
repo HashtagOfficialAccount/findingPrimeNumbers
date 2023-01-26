@@ -5,7 +5,11 @@ primes = []
 
 #for loop to loop from the start number to the end number 
 for x in range(start_num,end_num + 1):
-    if not(x % 2 == 0 and x != 2 or x % 3 == 0 and x != 3 or x % 5 == 0 and x != 5 or x % 7 == 0 and x != 7):
+    t = 0
+    for i in range(1, x + 1):
+        if x % i == 0:
+            t += 1
+    if t == 2:
         primes.append(x)
 
 print(primes)
